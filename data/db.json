@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Artikel Pertama",
+      "body": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis reprehenderit necessitatibus saepe. Nemo, quas consectetur? Repellat esse modi cumque totam labore ratione consequuntur pariatur animi. Ullam hic totam eveniet quod amet error assumenda facere.",
+      "tags": [
+        "web",
+        "vue",
+        "node"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Artikel Kedua",
+      "body": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis reprehenderit necessitatibus saepe. Nemo, quas consectetur? Repellat esse modi cumque totam labore ratione consequuntur pariatur animi. Ullam hic totam eveniet quod amet error assumenda facere.",
+      "tags": [
+        "js",
+        "html",
+        "css"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Artikel ke tiga",
+      "body": "ini adalah artikel ke tiga",
+      "tags": [
+        "js",
+        "node",
+        "json"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Data post baru",
+      "body": "data post body baru",
+      "tags": [
+        "vue",
+        "bootstrap",
+        "fontawesome"
+      ]
+    }
+  ]
+}

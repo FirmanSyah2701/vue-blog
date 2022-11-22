@@ -7,7 +7,7 @@
               <div class="col-lg-8 col-md-10 mx-auto">
                   <div class="site-heading">
                       <h1>Clean Blog</h1>
-                      <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                      <span class="subheading">Posts by tag</span>
                   </div>
               </div>
           </div>
@@ -20,7 +20,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
               <div v-if="error">{{ error }}</div>
               <div v-if="posts.length">
-                <PostList :posts="posts" />
+                <PostList :posts="postsWithTag" />
               </div>
               <div v-else> <Loading /> </div>
           </div>
@@ -29,24 +29,28 @@
 </template>
 
 <script>
-import PostList from '../components/posts/PostList'
-import Loading from '../components/Loading'
-import getPosts from '../composable/getPosts'
+import PostList from '@/components/posts/PostList'
+import Loading from '@/components/Loading'
+import getPosts from '@/composable/getPosts'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 export default {
-  name: 'Home',
+  name: 'Tag',
   components: {
     PostList, Loading
   },
   setup() {
+    const route = useRoute()
     const { posts, error, load } = getPosts()
 
     load()
 
-    return { posts, error }
-  },
-  mounted() {
-    console.log($('.para').text())
+    const postsWithTag = computed(() => {
+        return posts.value.filter((p) => p.tags.includes(route.params.tag))
+    })
+
+    return { posts, postsWithTag, error }
   }
 }
 </script>
